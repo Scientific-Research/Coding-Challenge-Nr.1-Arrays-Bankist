@@ -19,3 +19,33 @@ TEST DATA 2: Julia's data [9, 16, 6, 8, 3], Kate's data [10, 5, 6, 1, 4]
 GOOD LUCK 😀
 */
 
+// Create a function 'checkDogs', which accepts 2 arrays of dog's ages ('dogsJulia' and 'dogsKate'), and does the following things:
+
+// 1. Julia found out that the owners of the FIRST and the LAST TWO dogs actually have cats, not dogs! So create a shallow copy of Julia's array, and remove the cat ages from that copied array (because it's a bad practice to mutate function parameters)!
+
+const checkDogs = (dogsJulia, dogsKate) => {
+  // create a shallow copy using slice() method
+  const dogsJuliaCopy1 = dogsJulia.slice();
+  console.log(dogsJuliaCopy1);
+
+  const dogsJuliaCopy3 = dogsJulia.slice();
+
+  // create a shallow copy using spread operator
+  const dogsJuliaCopy2 = [...dogsJulia];
+  console.log(dogsJuliaCopy2);
+
+  // Removing the first and the last two dogs from the Julia's array => USING SPLICE
+  const removedFirstElement_Splice = dogsJuliaCopy1.splice(1);
+  console.log(removedFirstElement_Splice); // [5, 2, 12, 7]
+  console.log(dogsJuliaCopy1); // [3]
+
+  const removedLastTwoElements_Splice = removedFirstElement_Splice.splice(0, 2);
+  console.log(removedLastTwoElements_Splice); // [5, 2]
+  console.log(removedFirstElement_Splice); // [12, 7]
+
+  // Removing the first and the last two dogs from the Julia's array => USING SLICE
+  const removedFirstElement_Slice = dogsJuliaCopy3.slice(1, 3);
+  console.log(removedFirstElement_Slice); // [5, 2]
+};
+
+checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
