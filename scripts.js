@@ -44,8 +44,17 @@ const checkDogs = (dogsJulia, dogsKate) => {
   console.log(removedFirstElement_Splice); // [12, 7]
 
   // Removing the first and the last two dogs from the Julia's array => USING SLICE
-  const removedFirstElement_Slice = dogsJuliaCopy3.slice(1, 3);
-  console.log(removedFirstElement_Slice); // [5, 2]
+  const juliaNewArray = dogsJuliaCopy3.slice(1, 3);
+  console.log(juliaNewArray); // [5, 2]
+
+  // 2. Create an array with both Julia's (corrected) and Kate's data!
+  // 1. SPREAD OPERATOR
+  const newJuliaData_kateData = [...juliaNewArray, ...dogsKate];
+
+  // 2. CONCAT
+  const newJuliaData_kateData_2 = juliaNewArray.concat(dogsKate);
+  console.log(newJuliaData_kateData); // [5, 2, 4, 1, 15, 8, 3]
+  console.log(newJuliaData_kateData_2); // [5, 2, 4, 1, 15, 8, 3]
 };
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
