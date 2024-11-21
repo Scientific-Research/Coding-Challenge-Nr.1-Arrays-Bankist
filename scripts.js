@@ -55,6 +55,18 @@ const checkDogs = (dogsJulia, dogsKate) => {
   const newJuliaData_kateData_2 = juliaNewArray.concat(dogsKate);
   console.log(newJuliaData_kateData); // [5, 2, 4, 1, 15, 8, 3]
   console.log(newJuliaData_kateData_2); // [5, 2, 4, 1, 15, 8, 3]
+
+  // 3. For each remaning dog, log to the console whether it's an adult ('Dog number 1 is an adult, and is 5 years old') or a puppy ('Dog number 2 is still a puppy 🐶')
+  // [5, 2, 4, 1, 15, 8, 3]
+  newJuliaData_kateData.forEach((dog, index) => {
+    if (dog >= 3) {
+      console.log(
+        `Dog number ${index + 1} is an adult, and is ${dog} years old`
+      );
+    } else {
+      console.log(`Dog number ${index + 1} is still a puppy 🐶`);
+    }
+  });
 };
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
