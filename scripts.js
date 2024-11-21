@@ -47,6 +47,18 @@ const checkDogs = (dogsJulia, dogsKate) => {
   const juliaNewArray = dogsJuliaCopy3.slice(1, 3);
   console.log(juliaNewArray); // [5, 2]
 
+  //////////////////////////////////////// JONAS SOLUTION //////////////////////////////////
+  // NOTE: JONAS SOLUTION FOR QUESTION NR.1
+  // => he doesn't assign the results from SPLICE() method to a new variable(what i already did) and only keep the values in old variable and display them directly in console.log()!
+  const dogsJuliaCorrected = dogsJulia.slice(); // to create a copy
+
+  dogsJuliaCorrected.splice(0, 1); // 0:start, 1:how many element must be extracted?(1 element) => 5
+  dogsJuliaCorrected.splice(-2); // delete the last two elements
+  // dogsJuliaCorrected.splice(2); // delete the first two elements
+
+  console.log(dogsJuliaCorrected); // [16, 6]
+  //////////////////////////////////////// JONAS SOLUTION //////////////////////////////////
+
   // 2. Create an array with both Julia's (corrected) and Kate's data!
   // 1. SPREAD OPERATOR
   const newJuliaData_kateData = [...juliaNewArray, ...dogsKate];
